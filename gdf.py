@@ -1,7 +1,7 @@
 import random
 
 # this program is used to generate a random number between 0 and 20.
-# The user will have 6 tries to guess the write number. If the user does not answer the guess right, the game is over.
+# The user will have 3 tries to guess the write number. If the user does not answer the guess right, the game is over.
 # Using the random library.
 
 """
