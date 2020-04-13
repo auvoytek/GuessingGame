@@ -25,42 +25,39 @@ print("Please input a random number between 0 and 20. You only have 3 tries so m
 print(randomNumber)
 
 while gameRun:
-    if incorrectGuess == 3:
-        print("Game over you have reached 3 tries")
-        break
-    elif incorrectGuess < 3:
-        userInput = input(">")
-        if (int(userInput) <= 20) and (int(userInput) >= 0):
-            if int(userInput) == randomNumber:
-                print("Congrats, you guessed right. Game over!")
-                break
-            elif int(userInput) != randomNumber:
-                tooLow = randomNumber > int(userInput)
-                tooHigh = randomNumber < int(userInput)
-                if tooHigh:
-                    incorrectGuess += 1
-                    if incorrectGuess >= 3:
-                        print("Game over you have reached 3 tries")
-                        break
-                    elif incorrectGuess < 3:
-                        print("You guess was too high")
+    userInput = input(">")
+    if (int(userInput) <= 20) and (int(userInput) >= 0):
+        if int(userInput) == randomNumber:
+            print("Congrats, you guessed right. Game over!")
+            break
+        elif int(userInput) != randomNumber:
+            tooLow = randomNumber > int(userInput)
+            tooHigh = randomNumber < int(userInput)
+            if tooHigh:
+                incorrectGuess += 1
+                if incorrectGuess >= 3:
+                    print("Game over you have reached 3 tries")
+                    print("The random number was " + str(randomNumber))
+                    break
+                elif incorrectGuess < 3:
+                    print("Your guess was too high")
+            if tooLow:
+                incorrectGuess += 1
+                if incorrectGuess >= 3:
+                    print("Game over you have reached 3 tries")
+                    print("The random number was " + str(randomNumber))
+                    break
+                elif incorrectGuess < 3:
+                    print("Your guess was too low")
 
-                if tooLow:
-                    incorrectGuess += 1
-                    if incorrectGuess >= 3:
-                        print("Game over you have reached 3 tries")
-                        break
-                    elif incorrectGuess < 3:
-                        print("You guess was too low")
-
-        elif int(userInput) > 20:
-            incorrectGuess += 1
-            if incorrectGuess == 3:
-                print("Game over you have reached 3 tries")
-                break
-            elif incorrectGuess < 3:
-                print("Enter a number between 0 and 20.")
-
+    elif int(userInput) > 20:
+        incorrectGuess += 1
+        if incorrectGuess >= 3:
+            print("Game over you have reached 3 tries.")
+            print("The random number was "+str(randomNumber))
+            break
+        elif incorrectGuess < 3:
+            print("Enter a number in the range of 0 and 20.")
 
 
 
